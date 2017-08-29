@@ -16,7 +16,7 @@ namespace KeyVaultPersistencePOC
         static MemoryCache memoryCache = MemoryCache.Default;
 
         [FunctionName("ServiceBusWriterTimer")]
-        public static async void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, TraceWriter log)
+        public static async void Run([TimerTrigger("0 */2 * * * *")]TimerInfo myTimer, TraceWriter log)
         {
             log.Info($"ServiceBusWriterTimer function executed at: {DateTime.Now}");
 
@@ -28,11 +28,19 @@ namespace KeyVaultPersistencePOC
             /** Attempt to gather secrets from cache **/
             log.Info("Reading 'ServiceBusSendPrimaryKey' from cache..");
             var cacheObject1 = memoryCache["ServiceBusSendPrimaryKey"];
-            var primaryKey = (cacheObject1 == null) ? "invalid" : (string) cacheObject1;
+            var primaryKey = (cacheObject1 == null) ? null : (string) cacheObject1;
 
             log.Info("Reading 'ServiceBusSendSecondaryKey' from cache..");
             var cacheObject2 = memoryCache["ServiceBusSendSecondaryKey"];
-            var secondaryKey = (cacheObject2 == null) ? "invalid" : (string)cacheObject2;
+            var secondaryKey = (cacheObject2 == null) ? null : (string)cacheObject2;
+
+            /** Handle case that cached objects returned null **/
+            if (primaryKey == null || secondaryKey == null)
+            {
+                /** Do something here to handle cache failure **/
+                log.Warning("Secret key values return null..exiting function");
+                return; 
+            }
 
             /** Service Bus Connection Config **/
             log.Info("Setting up ServiceBusWriterConfig objects..");
