@@ -23,7 +23,7 @@
       <HintPath>..\..\Starbucks\Platform\platform-messaging\Starbucks.Dp.Platform.ServiceBusWriter\bin\Debug\Starbucks.Dp.Platform.ServiceBusWriter.dll</HintPath>
     </Reference>
     <Reference Include="Starbucks.Dp.Platform.Shared">
-      <HintPath>..\..\Starbucks\Platform\platform-utility\Starbucks.Dp.Platform.Shared\bin\x64\Debug\Starbucks.Dp.Platform.Shared.dll</HintPath>
+      <HintPath>lib\Starbucks.Dp.Platform.Shared.dll</HintPath>
     </Reference>
     <Reference Include="System.Fabric">
       <HintPath>..\..\Starbucks\Platform\platform-messaging\Starbucks.Dp.Platform.ServiceBusWriter\bin\Debug\System.Fabric.dll</HintPath>
@@ -37,5 +37,8 @@
     <None Update="local.settings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -66,7 +65,7 @@ namespace KeyVaultPersistencePOC
             var secretNames = new HashSet<string> { "ServiceBusSendPrimaryKey", "ServiceBusSendSecondaryKey" };
 
             /** Get Secret values from Key Vault **/
-            log.Info("\nFetching secrets from Azure Key Vault..\n");
+            log.Info("Fetching secrets from Azure Key Vault..\n");
             var keyVaultSecrets = await KeyVaultManager.Instance.GetCurrentSecretValuesAsync(ApplicationId, ApplicationKey, KeyVaultUri, secretNames);
 
             /** cache each secret value **/
