@@ -1,17 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.KeyVault" Version="2.3.2" />
     <PackageReference Include="Microsoft.Azure.WebJobs" Version="2.1.0-beta1" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="2.1.0-beta1" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Http" Version="1.0.0-beta1" />
     <PackageReference Include="Microsoft.Azure.WebJobs.ServiceBus" Version="2.1.0-beta1" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="3.13.9" />
+    <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.9" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.0-alpha3" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Starbucks.Dp.Platform.Security">
+      <HintPath>..\..\Starbucks\Platform\platform-security\Starbucks.Dp.Platform.Security\bin\Debug\Starbucks.Dp.Platform.Security.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Caching" />
   </ItemGroup>
   <ItemGroup>
