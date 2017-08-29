@@ -19,6 +19,15 @@
     <Reference Include="Starbucks.Dp.Platform.Security">
       <HintPath>..\..\Starbucks\Platform\platform-security\Starbucks.Dp.Platform.Security\bin\Debug\Starbucks.Dp.Platform.Security.dll</HintPath>
     </Reference>
+    <Reference Include="Starbucks.Dp.Platform.ServiceBusWriter">
+      <HintPath>..\..\Starbucks\Platform\platform-messaging\Starbucks.Dp.Platform.ServiceBusWriter\bin\Debug\Starbucks.Dp.Platform.ServiceBusWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="Starbucks.Dp.Platform.Shared">
+      <HintPath>..\..\Starbucks\Platform\platform-utility\Starbucks.Dp.Platform.Shared\bin\x64\Debug\Starbucks.Dp.Platform.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Fabric">
+      <HintPath>..\..\Starbucks\Platform\platform-messaging\Starbucks.Dp.Platform.ServiceBusWriter\bin\Debug\System.Fabric.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Caching" />
   </ItemGroup>
   <ItemGroup>
